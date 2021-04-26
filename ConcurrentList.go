@@ -1,4 +1,4 @@
-package ConcurrentsimpleList
+package main
 
 import (
 	"sync"
@@ -34,6 +34,7 @@ type intNode struct {
 func newIntNode(value int) *intNode {
 	return &intNode{value: value}
 }
+
 
 func NewInt() *IntList {
 	return &IntList{head: newIntNode(0)}

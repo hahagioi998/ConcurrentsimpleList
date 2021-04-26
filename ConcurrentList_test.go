@@ -1,10 +1,11 @@
-package ConcurrentsimpleList
+package main
 
 import (
 	"fmt"
 	"sync"
 	"sync/atomic"
 	"testing"
+	_ "unsafe"
 )
 
 //go:linkname fastrand runtime.fastrand
@@ -16,7 +17,6 @@ func fastrandn(n uint32) uint32 {
 }
 
 func TestIntSet(t *testing.T) {
-	// Correctness.
 	l := NewInt()
 	if l.Len() != 0 {
 		t.Fatal("invalid length")
